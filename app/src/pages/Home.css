@@ -1,0 +1,17 @@
+.home {
+	display: grid;
+	grid-template-columns: 1fr 300px;
+	gap: 8px;
+}
+
+.left {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.tables {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 8px;
+}
