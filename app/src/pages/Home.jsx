@@ -1,36 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
-import { Card, CardBody } from "@nextui-org/react";
+import { Card, CardBody, Button, ButtonGroup, Input } from "@nextui-org/react";
 
 const Home = () => {
-	return (
-		<div className="w-screen p-8 flex home h-screen">
-			<div className="left">
-				<Card className="">
-					<CardBody>
-						<p>Make beautiful websites regardless of your design experience.</p>
-					</CardBody>
-				</Card>
-				<div className="tables">
-					<Card>
-						<CardBody>
-							<p>Table 1</p>
-						</CardBody>
-					</Card>
-					<Card>
-						<CardBody>
-							<p>Table 2</p>
-						</CardBody>
-					</Card>
+  return (
+    <div className="w-screen p-8 flex home h-screen">
+      <div className="left">
+	  	<Card className="">
+			<CardBody>
+				<div className="card-content">
+				<p className="dashboard-title">Dashboard</p>
+				<div className="button-group">
+					<Button color="secondary">Add Expense</Button>
+					<Button color="secondary">Settle Up</Button>
 				</div>
-			</div>
-			<Card>
-				<CardBody>
-					<p>Sidebar</p>
-				</CardBody>
-			</Card>
-		</div>
-	);
+				</div>
+			</CardBody>
+		</Card>
+        <div className="tables">
+          <Card>
+            <CardBody className="center-content">
+              <h3>You Owe</h3>
+            </CardBody>
+          </Card>
+          <Card>
+            <CardBody>
+			<h3>You are Owed</h3>
+            </CardBody>
+          </Card>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Home;
