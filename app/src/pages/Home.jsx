@@ -6,10 +6,14 @@ import SettleUpModal from "../modals/SettleUpModal";
 import BillSummary from "../components/BillSummary";
 import GroupSummary from "../components/GroupSummary";
 import FriendSummary from "../components/FriendSummary";
+import AddGroupModal from "../modals/AddGroupModal";
+import AddFriendModal from "../modals/AddFriendModal";
 
 const Home = () => {
   const { isOpen: isAddExpenseOpen, onOpen: onAddExpenseOpen, onOpenChange: onAddExpenseChange } = useDisclosure();
   const { isOpen: isSettleUpOpen, onOpen: onSettleUpOpen, onOpenChange: onSettleUpChange } = useDisclosure();
+  const { isOpen: isAddGroupOpen, onOpen: onAddGroupOpen, onOpenChange: onAddGroupChange } = useDisclosure();
+  const { isOpen: isAddFriendOpen, onOpen: onAddFriendOpen, onOpenChange: onAddFriendChange } = useDisclosure();
 
   return (
     <div className="home">
@@ -47,7 +51,8 @@ const Home = () => {
 			<div className="card-content">
 				<p className="groups-title">Groups</p>
 				<div className="button-group">
-					<Button color="secondary" className="add-groups-button">Add Groups</Button>
+					<Button color="secondary" className="add-groups-button" onPress={onAddGroupOpen}>Add Groups</Button>
+					<AddGroupModal isOpen={isAddGroupOpen} onOpenChange={onAddGroupChange} />
 				</div>
 			</div>
               <GroupSummary />
@@ -58,7 +63,8 @@ const Home = () => {
 			<div className="card-content">
 				<p className="friends-title">Friends</p>
 				<div className="button-group">
-					<Button color="secondary" className="add-friends-button">Add Friends</Button>
+					<Button color="secondary" className="add-friends-button" onPress={onAddFriendOpen}>Add Friends</Button>
+					<AddFriendModal isOpen={isAddFriendOpen} onOpenChange={onAddFriendChange} />
 				</div>
 			</div>
               <FriendSummary />
