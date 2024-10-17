@@ -23,9 +23,9 @@ const Home = () => {
             <div className="card-content">
               <p className="dashboard-title">Dashboard</p>
               <div className="button-group">
-                <Button color="secondary" onPress={onAddExpenseOpen}>Add Expense</Button>
+                <Button disableRipple radius="sm" onPress={onAddExpenseOpen}>Add Expense</Button>
                 <AddExpenseModal isOpen={isAddExpenseOpen} onOpenChange={onAddExpenseChange} />
-                <Button color="secondary" onPress={onSettleUpOpen}>Settle Up</Button>
+                <Button disableRipple radius="sm" onPress={onSettleUpOpen}>Settle Up</Button>
                 <SettleUpModal isOpen={isSettleUpOpen} onOpenChange={onSettleUpChange} />
               </div>
             </div>
@@ -51,7 +51,7 @@ const Home = () => {
 			<div className="card-content">
 				<p className="groups-title">Groups</p>
 				<div className="button-group">
-					<Button color="secondary" className="add-groups-button" onPress={onAddGroupOpen}>Add Groups</Button>
+					<Button disableRipple radius="sm" onPress={onAddGroupOpen}>Add Groups</Button>
 					<AddGroupModal isOpen={isAddGroupOpen} onOpenChange={onAddGroupChange} />
 				</div>
 			</div>
@@ -63,7 +63,7 @@ const Home = () => {
 			<div className="card-content">
 				<p className="friends-title">Friends</p>
 				<div className="button-group">
-					<Button color="secondary" className="add-friends-button" onPress={onAddFriendOpen}>Add Friends</Button>
+					<Button disableRipple radius="sm" onPress={onAddFriendOpen}>Add Friends</Button>
 					<AddFriendModal isOpen={isAddFriendOpen} onOpenChange={onAddFriendChange} />
 				</div>
 			</div>
