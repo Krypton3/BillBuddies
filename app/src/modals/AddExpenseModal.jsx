@@ -4,12 +4,13 @@ import { IoIosListBox } from "react-icons/io";
 import { FaDollarSign } from "react-icons/fa";
 import { BsCalendar2DateFill } from "react-icons/bs";
 import PaidByModal from "./PaidByModal";
+import SplitByModal from "./SplitByModal";
 
-// Dummy list of friends 
 const friendList = ["Alice", "Bob", "Charlie", "David", "Eve"];
 
 const AddExpenseModal = ({ isOpen, onOpenChange }) => {
   const [paidByModalOpen, setPaidByModalOpen] = useState(false);
+  const [splitByModalOpen, setSplitByModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState("you");
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -54,8 +55,7 @@ const AddExpenseModal = ({ isOpen, onOpenChange }) => {
                     <div className="flex-grow">
                       <Input
                         type="text"
-                        label="Friends"
-                        placeholder="Search friends"
+                        placeholder="Enter names"
                         value={searchQuery}
                         onChange={handleSearchChange} // Handle search input
                         style={{ width: "100%" }}
@@ -124,10 +124,13 @@ const AddExpenseModal = ({ isOpen, onOpenChange }) => {
                       variant="faded"
                       onPress={() => setPaidByModalOpen(true)}
                     >
-                      {selectedUser}
+                      {selectedUser || 'you'}
                     </Button>
                     <p>Split By</p>
-                    <Button color="secondary" variant="faded">
+                    <Button 
+                      color="secondary" 
+                      variant="faded"
+                      onPress={() => setSplitByModalOpen(true)}>
                       equally
                     </Button>
                   </div>
@@ -150,6 +153,10 @@ const AddExpenseModal = ({ isOpen, onOpenChange }) => {
         onClose={() => setPaidByModalOpen(false)}
         selectedUser={selectedUser}
         onUserSelect={handleUserSelect}
+      />
+      <SplitByModal
+        isOpen={splitByModalOpen}
+        onClose={() => setSplitByModalOpen(false)}
       />
     </>
   );
